@@ -22,10 +22,10 @@ const register = function(server, pluginOptions) {
   };
 
   const methods = {
-    addToIndex: require('./methods/add').bind(bind),
-    removeFromIndex: require('./methods/remove').bind(bind),
-    clearByType: require('./methods/clearByType').bind(bind),
-    query: require('./methods/query').bind(bind)
+    addToIndex: require('./lib/add.js').bind(bind),
+    removeFromIndex: require('./lib/remove.js').bind(bind),
+    clearByType: require('./lib/clearByType.js').bind(bind),
+    query: require('./lib/query.js').bind(bind)
   };
 
   server.decorate('server', 'search', methods);

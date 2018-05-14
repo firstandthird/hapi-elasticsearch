@@ -25,7 +25,8 @@ const register = function(server, pluginOptions) {
     addToIndex: require('./lib/add.js').bind(bind),
     removeFromIndex: require('./lib/remove.js').bind(bind),
     clearByType: require('./lib/clearByType.js').bind(bind),
-    query: require('./lib/query.js').bind(bind)
+    query: require('./lib/query.js').bind(bind),
+    client
   };
 
   server.decorate('server', 'search', methods);

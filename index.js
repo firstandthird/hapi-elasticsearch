@@ -1,7 +1,8 @@
 const elasticsearch = require('elasticsearch');
 
 const defaults = {
-  apiVersion: '6.0'
+  apiVersion: '6.0',
+  type: '_doc'
 };
 
 const register = function(server, pluginOptions) {
@@ -26,6 +27,7 @@ const register = function(server, pluginOptions) {
     removeFromIndex: require('./lib/remove.js').bind(bind),
     clearByType: require('./lib/clearByType.js').bind(bind),
     query: require('./lib/query.js').bind(bind),
+    dropIndex: require('./lib/dropIndex.js').bind(bind),
     client
   };
 

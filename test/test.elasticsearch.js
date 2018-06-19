@@ -7,11 +7,14 @@ tap.test('can load plugin', async (t) => {
   await server.register({
     plugin,
     options: {
-      host: 'localhost:9200',
-      elasticLog: 'debug',
+      host: 'elasticsearch:9200',
+      elasticLog: 'debug'
     }
   });
   await server.start();
+
+  await server.search.addToIndex({ index: 'testinx', type: 'doc', id: Math.floor(Math.random() * 10000), data: { tree: 'bones', gone: 'wind' } });
+
   await new Promise(resolve => setTimeout(resolve, 2000));
   await server.stop();
 

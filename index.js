@@ -28,6 +28,8 @@ const register = function(server, pluginOptions) {
     clearByType: require('./lib/clearByType.js').bind(bind),
     query: require('./lib/query.js').bind(bind),
     dropIndex: require('./lib/dropIndex.js').bind(bind),
+    createIndex: require('./lib/createIndex.js').bind(bind),
+    createIndexIfNotExists: require('./lib/createIndexIfNotExists.js').bind(bind),
     client
   };
 

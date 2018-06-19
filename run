@@ -1,0 +1,15 @@
+#!/bin/bash
+
+CMD=$1
+
+if [[ "$CMD" == "test" ]]; then
+  shift
+  ARGS=$@
+  docker-compose run --rm plugin sh -c "npm install && npm test -- $ARGS"
+  exit
+fi
+
+echo "To run tests:"
+echo "$> ./run test"
+echo ""
+exit

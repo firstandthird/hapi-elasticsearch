@@ -19,7 +19,6 @@
     "extends": "firstandthird"
   },
   "devDependencies": {
-    "elasticsearch-mock-js": "^1.0.4",
     "eslint": "^4.19.1",
     "eslint-config-firstandthird": "^4.3.0",
     "eslint-plugin-import": "^2.11.0",

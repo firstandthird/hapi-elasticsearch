@@ -4,10 +4,11 @@ const plugin = require('../index.js');
 
 tap.test('can load plugin', async (t) => {
   const server = new Hapi.Server({ port: 8080 });
+  const host = process.env.ELASTICSEARCH_HOST;
   await server.register({
     plugin,
     options: {
-      host: 'elasticsearch:9200',
+      host: `${host}:9200`,
       elasticLog: 'debug'
     }
   });

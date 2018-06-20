@@ -1,0 +1,6 @@
+env:
+  - ELASTICSEARCH_HOST=localhost
+services:
+  - elasticsearch
+before_script:
+  - sleep 10

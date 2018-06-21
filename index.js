@@ -34,6 +34,19 @@ const register = function(server, pluginOptions) {
   };
 
   server.decorate('server', 'search', methods);
+  if (pluginOptions.index) {
+    server.events.on('start', async () => {
+      const indexOpts = {
+        index: pluginOptions.index
+      };
+
+      if (pluginOptions.indexSettings) {
+        indexOpts.settings = pluginOptions.indexSettings;
+      }
+
+      await server.search.createIndexIfNotExists(indexOpts);
+    });
+  }
 };
 
 exports.plugin = {

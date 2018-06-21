@@ -3,7 +3,7 @@ const Hapi = require('hapi');
 const plugin = require('../index.js');
 
 tap.test('can load plugin', async (t) => {
-  const server = new Hapi.Server({ port: 8080 });
+  const server = new Hapi.Server({ port: 8080, debug: { log: '*' } });
   const host = process.env.ELASTICSEARCH_HOST;
   const rando = Math.floor(Math.random() * 1000);
   await server.register({
@@ -27,7 +27,7 @@ tap.test('can load plugin', async (t) => {
 });
 
 tap.test('autocreate index with settings', async (t) => {
-  const server = new Hapi.Server({ port: 8080 });
+  const server = new Hapi.Server({ port: 8080, debug: { log: '*' } });
   const host = process.env.ELASTICSEARCH_HOST;
   const rando = Math.floor(Math.random() * 1000);
   await server.register({

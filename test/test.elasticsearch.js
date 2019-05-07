@@ -1,5 +1,5 @@
 const tap = require('tap');
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 const plugin = require('../index.js');
 
 tap.test('can load plugin', async (t) => {

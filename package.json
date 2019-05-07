@@ -3,7 +3,7 @@
   "description": "hapi plugin for elastic search",
   "homepage": "https://github.com/firstandthird/hapi-elasticsearch",
   "author": "First+Third",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "keywords": [],
   "repository": {
     "type": "git",
